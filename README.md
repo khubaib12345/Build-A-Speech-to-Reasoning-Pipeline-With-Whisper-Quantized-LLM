@@ -35,50 +35,9 @@ A **unified AI system** that:
 5. **Educational Value** — Shows how to integrate cutting-edge ML techniques (quantization, transformer architectures, prompt engineering)
 
 ---
+## Architecture Pipeline
 
-## 🏗️ Architecture Overview
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SPEECH-TO-REASONING PIPELINE                 │
-└─────────────────────────────────────────────────────────────────┘
-
-                           INPUT AUDIO FILE
-                        (question.mp3/wav/m4a)
-                                 │
-                                 ▼
-                    ┌──────────────────────────┐
-                    │   STAGE 1: TRANSCRIPTION │
-                    │   (Whisper Model)        │
-                    └──────────────────────────┘
-                              │
-                    • Loads audio file
-                    • Converts to log-mel spectrogram
-                    • Uses transformer encoder-decoder
-                    • Returns transcribed text
-                              │
-                              ▼
-                      [TRANSCRIBED TEXT]
-                   "How does LLM process audio?"
-                              │
-                              ▼
-                    ┌──────────────────────────┐
-                    │   STAGE 2: REASONING     │
-                    │ (Quantized LLaMA Model)  │
-                    └──────────────────────────┘
-                              │
-                    • Receives text prompt
-                    • Tokenizes & embeds text
-                    • 4-bit quantized inference
-                    • Generates answer tokens
-                              │
-                              ▼
-                        [FINAL ANSWER]
-                  "OpenAI Whisper converts the
-                   audio into spectrograms and
-                   uses transformer decoder..."
-```
-
+![Architecture Pipeline](architecture_pipeline.png)
 ---
 
 ## 🔧 Technology Stack
